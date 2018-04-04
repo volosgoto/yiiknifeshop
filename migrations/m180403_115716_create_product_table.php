@@ -19,6 +19,8 @@ class m180403_115716_create_product_table extends Migration
             'content' => $this->text(),
             'status'=>$this->integer(),
             'price' => $this->float(),
+            //TODO upd discount
+            'discount' => $this->float(),
             'keywords' => $this->string(),
             'description' => $this->string(),
             'image' => $this->string(),
@@ -39,3 +41,4 @@ class m180403_115716_create_product_table extends Migration
         $this->dropTable('product');
     }
 }
+
