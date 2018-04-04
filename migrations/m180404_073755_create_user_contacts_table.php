@@ -21,7 +21,7 @@ class m180404_073755_create_user_contacts_table extends Migration
             'region'=>$this->string(),
             'street'=>$this->string(),
             'house'=>$this->string(),
-            'appartment'=>$this->string(),
+            'apartment'=>$this->string(),
         ]);
     }
 
