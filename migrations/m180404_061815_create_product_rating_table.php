@@ -1,0 +1,32 @@
+<?php
+
+use yii\db\Migration;
+
+/**
+ * Handles the creation of table `product_rating`.
+ */
+class m180404_061815_create_product_rating_table extends Migration
+{
+    /**
+     * {@inheritdoc}
+     */
+    public function safeUp()
+    {
+        $this->createTable('product_rating', [
+            'id' => $this->primaryKey(),
+            'product_id' => $this->primaryKey(),
+            'hit' => $this->integer(),
+            'new' => $this->integer(),
+            'sale' => $this->integer(),
+            'rating' => $this->integer(),
+        ]);
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function safeDown()
+    {
+        $this->dropTable('product_rating');
+    }
+}

@@ -16,7 +16,6 @@ class m180403_113349_create_user_table extends Migration
             'id' => $this->primaryKey(),
             'name' => $this->string(),
             'email' => $this->string(),
-            'email' => $this->string(),
 //            'date'=>$this->date(),
             'image'=>$this->string(),
             'status'=>$this->integer(),
