@@ -24,6 +24,9 @@ class m180403_121128_create_order_table extends Migration
             'email' => $this->string(255),
             'phone' => $this->string(255),
             'adress' => $this->string(255),
+
+            // TODO add delivery_options, delivery table
+            'delivery_options' => $this->integer(),
         ]);
     }
 
