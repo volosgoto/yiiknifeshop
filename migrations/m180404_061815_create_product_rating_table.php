@@ -14,7 +14,7 @@ class m180404_061815_create_product_rating_table extends Migration
     {
         $this->createTable('product_rating', [
             'id' => $this->primaryKey(),
-            'product_id' => $this->primaryKey(),
+            'product_id' => $this->integer(),
             'hit' => $this->integer(),
             'new' => $this->integer(),
             'sale' => $this->integer(),
