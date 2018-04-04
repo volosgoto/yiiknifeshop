@@ -15,6 +15,7 @@ class m180404_073755_create_user_contacts_table extends Migration
         $this->createTable('user_contacts', [
             'id' => $this->primaryKey(),
             'user_id' => $this->integer(),
+            'image'=>$this->string(),
             'phone'=>$this->string(),
             'country'=>$this->string(),
             'region'=>$this->string(),

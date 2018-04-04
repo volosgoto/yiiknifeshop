@@ -16,8 +16,10 @@ class m180403_113349_create_user_table extends Migration
             'id' => $this->primaryKey(),
             'name' => $this->string(),
             'email' => $this->string(),
+            'password' => $this->string(),
+
 //            'date'=>$this->date(),
-            'image'=>$this->string(),
+//            'image'=>$this->string(),
             'status'=>$this->integer(),
             'isAdmin'=>$this->integer(),
             'created_at'=>$this->date()->notNull(),
