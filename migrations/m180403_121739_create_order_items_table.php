@@ -17,8 +17,10 @@ class m180403_121739_create_order_items_table extends Migration
             'id' => $this->primaryKey(),
             'order_id' => $this->integer(),
             'product_id' => $this->integer(),
-            'created_at'=>$this->date()->notNull(),
-            'name' => $this->string(255),
+            'price' => $this->integer(),
+            'discount_price' => $this->integer(),
+//            'created_at'=>$this->date()->notNull(),
+            'name' => $this->string(),
             'qty_item' => $this->integer(),
             'sum_item' => $this->float(),
             ]);

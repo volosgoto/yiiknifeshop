@@ -20,10 +20,11 @@ class m180403_121128_create_order_table extends Migration
             'qty' => $this->integer(),
             'status' => $this->integer(),
             'sum' => $this->float(),
-            'name' => $this->string(255),
-            'email' => $this->string(255),
-            'phone' => $this->string(255),
-            'adress' => $this->string(255),
+            'discount' => $this->float(),
+            'name' => $this->string(),
+            'email' => $this->string(),
+            'phone' => $this->string(),
+            'address' => $this->string(),
 
             // TODO add delivery_options, delivery table
             'delivery_options' => $this->integer(),

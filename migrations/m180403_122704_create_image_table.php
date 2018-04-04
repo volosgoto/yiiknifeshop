@@ -14,9 +14,9 @@ class m180403_122704_create_image_table extends Migration
     {
         $this->createTable('image', [
             'id' => $this->primaryKey(),
-            'item_id' => $this->string(255),
-            'file_path' => $this->string(255),
-            'isMain' => $this->string(255),
+            'item_id' => $this->string(),
+            'file_path' => $this->string(),
+            'isMain' => $this->string(),
             'name' => $this->text(),
             'alias' => $this->text(),
             // Пока так. Потом можно добавть в зависисости что прикручивать как менеджер изображений
