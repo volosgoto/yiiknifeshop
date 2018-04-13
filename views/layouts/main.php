@@ -1,13 +1,23 @@
-<!--A Design by W3layouts
-Author: W3layout
-Author URL: http://w3layouts.com
-License: Creative Commons Attribution 3.0 Unported
-License URL: http://creativecommons.org/licenses/by/3.0/
--->
+<?php
+
+use app\widgets\Alert;
+use yii\helpers\Html;
+use yii\bootstrap\Nav;
+use yii\bootstrap\NavBar;
+use yii\widgets\Breadcrumbs;
+use app\assets\AppAsset;
+
+AppAsset::register($this);
+
+?>
+
+
+<?php $this->beginPage() ?>
 <!DOCTYPE html>
-<html>
+<html lang="<?= Yii::$app->language ?>">
 <head>
-    <title>New Store A Ecommerce Category Flat Bootstarp Resposive Website Template | Home :: w3layouts</title>
+    <?= Html::csrfMetaTags() ?>
+    <title><?= Html::encode($this->title) ?></title>
     <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="js/jquery.min.js"></script>
@@ -16,7 +26,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
     <!--//theme-style-->
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Type" content="text/html">
+    <meta charset="<?= Yii::$app->charset ?>">
     <meta name="keywords" content="New Store Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template,
 Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
     <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
@@ -28,8 +39,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <script type="text/javascript" src="js/memenu.js"></script>
     <script>$(document).ready(function(){$(".memenu").memenu();});</script>
     <script src="js/simpleCart.min.js"> </script>
+    <?php $this->head() ?>
 </head>
 <body>
+<?php $this->beginBody() ?>
 <!--header-->
 <div class="header">
     <div class="header-top">
@@ -244,6 +257,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!--content-->
 <div class="content">
     <div class="container">
+
+
+        <?= $content ?>
+
+
         <div class="content-top">
             <h1>NEW RELEASED</h1>
             <div class="grid-in">
@@ -426,5 +444,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <p >© 2015 New store All Rights Reserved | Design by  <a href="http://w3layouts.com/" target="_blank">W3layouts</a> </p>
     </div>
 </div>
+<?php $this->endBody() ?>
 </body>
 </html>
+<?php $this->endPage() ?>
