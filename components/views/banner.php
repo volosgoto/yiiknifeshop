@@ -11,7 +11,7 @@ use yii\helpers\Url;
         <ul class="rslides" id="slider">
 <!--            <li style="background: --><?php //echo Html::img('@web/images/KS2335_KS2330_LS1R', ['alt' => 'banner img'])?><!--">-->
 
-            <li style="background: url('../images/KS2335_KS2330_LS1R.jpg')">
+            <li style="background: url('../images/KS2335_KS2330_LS1R.jpg')" >
                 <div class="container">
                     <div class="banner-text">
                         <h3>Lorem Ipsum is not simply dummy  </h3>
