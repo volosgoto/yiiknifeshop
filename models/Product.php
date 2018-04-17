@@ -3,6 +3,7 @@
 namespace app\models;
 
 use Yii;
+use yii\db\ActiveRecord;
 
 /**
  * This is the model class for table "product".
@@ -20,7 +21,7 @@ use Yii;
  * @property string $created_at
  * @property string $updated_at
  */
-class Product extends \yii\db\ActiveRecord
+class Product extends ActiveRecord
 {
     /**
      * @inheritdoc
@@ -39,8 +40,13 @@ class Product extends \yii\db\ActiveRecord
             [['category_id', 'status'], 'integer'],
             [['content'], 'string'],
             [['price', 'discount'], 'number'],
-            [['created_at'], 'required'],
-            [['created_at', 'updated_at'], 'safe'],
+
+            [['created_at'], 'date', 'format'=>'php:Y-m-d'],
+            [['created_at'], 'default', 'value' => date('Y-m-d')],
+
+            [['updated_at'], 'date', 'format'=>'php:Y-m-d'],
+            [['updated_at'], 'default', 'value' => date('Y-m-d')],
+
             [['name', 'keywords', 'description', 'image'], 'string', 'max' => 255],
         ];
     }
@@ -64,5 +70,9 @@ class Product extends \yii\db\ActiveRecord
             'created_at' => 'Created At',
             'updated_at' => 'Updated At',
         ];
+    }
+
+    public function getCategory(){
+        return $this->hasOne(Category::className(), ['id' => 'category_id']);
     }
 }

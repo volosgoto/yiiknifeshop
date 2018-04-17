@@ -3,6 +3,8 @@
 namespace app\models;
 
 use Yii;
+use yii\db\ActiveRecord;
+use app\models\Product;
 
 /**
  * This is the model class for table "category".
@@ -13,7 +15,7 @@ use Yii;
  * @property string $keywords
  * @property string $description
  */
-class Category extends \yii\db\ActiveRecord
+class Category extends ActiveRecord
 {
     /**
      * @inheritdoc
@@ -29,7 +31,8 @@ class Category extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['parent_id'], 'integer'],
+            [['id'], 'integer'],
+            [['name'], 'required'],
             [['name', 'keywords', 'description'], 'string', 'max' => 255],
         ];
     }
@@ -41,12 +44,17 @@ class Category extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'parent_id' => 'Parent ID',
             'name' => 'Name',
             'keywords' => 'Keywords',
             'description' => 'Description',
         ];
     }
+
+
+    public function getProducts(){
+        return $this->hasMany(Product::className(), ['category_id' => 'id']);
+    }
+
 }
 
 

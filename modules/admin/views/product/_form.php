@@ -2,6 +2,9 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
+use app\models\Product;
+use app\models\Category;
+use yii\helpers\ArrayHelper;
 
 /* @var $this yii\web\View */
 /* @var $model app\models\Product */
@@ -10,9 +13,14 @@ use yii\widgets\ActiveForm;
 
 <div class="product-form">
 
+
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'category_id')->textInput() ?>
+
+    <?= $form->field($model, 'category_id')->dropDownList(
+        ArrayHelper::map(Category::find()->all(), 'id', 'name')
+
+    )  ?>
 
     <?= $form->field($model, 'name')->textInput(['maxlength' => true]) ?>
 

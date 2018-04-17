@@ -4,10 +4,13 @@ namespace app\modules\admin\controllers;
 
 use Yii;
 use app\models\Product;
+use app\models\Category;
 use app\models\ProductSerch;
+use yii\helpers\ArrayHelper;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+
 
 /**
  * ProductController implements the CRUD actions for Product model.
@@ -66,13 +69,18 @@ class ProductController extends Controller
     {
         $model = new Product();
 
+        $categories = Category::find()->all();
+
+//
+//        $params = [
+//            'prompt' => 'Укажите название категории'
+//        ];
+
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
         }
 
-        return $this->render('create', [
-            'model' => $model,
-        ]);
+        return $this->render('create', compact('model','categories'));
     }
 
     /**
@@ -124,4 +132,14 @@ class ProductController extends Controller
 
         throw new NotFoundHttpException('The requested page does not exist.');
     }
+
+
+//    public  function setCategory (){
+//        $categories = Category::find()->all();
+//        $categoryName = ArrayHelper::map($categories, 'name');
+//        $params = [
+//            'prompt' => 'Укажите название категории'
+//        ];
+//        return $this->render('_form', compact('categoryName', 'params'));
+//    }
 }
