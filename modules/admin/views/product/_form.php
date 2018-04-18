@@ -17,12 +17,26 @@ use yii\helpers\ArrayHelper;
     <?php $form = ActiveForm::begin(); ?>
 
 
+<!--    --><?//= $form->field($model, 'category_id')->dropDownList(
+//        ArrayHelper::map(Category::find()->all(), 'id', 'name'),
+//        [
+//            'prompt' => 'Выбор категории',
+//        ]
+//
+//    )  ?>
+
+
     <?= $form->field($model, 'category_id')->dropDownList(
-        ArrayHelper::map(Category::find()->all(), 'id', 'name')
+        ArrayHelper::map(Category::find()->all(), 'id', 'name'),
+        [
+            'prompt' => 'Выбор категории',
+        ]
 
     )  ?>
 
     <?= $form->field($model, 'name')->textInput(['maxlength' => true]) ?>
+
+    <?= $form->field($model, 'manufacturer')->textInput(['maxlength' => true]) ?>
 
     <?= $form->field($model, 'content')->textarea(['rows' => 6]) ?>
 

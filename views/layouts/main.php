@@ -2,6 +2,7 @@
 
 use app\widgets\Alert;
 use yii\helpers\Html;
+use yii\helpers\Url;
 use yii\bootstrap\Nav;
 use yii\bootstrap\NavBar;
 use yii\widgets\Breadcrumbs;
@@ -58,7 +59,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             </div>
             <div class="header-left">
                 <ul>
-                    <li ><a href="login.html"  >Login</a></li>
+                    <li><a class="color6" href="<?php echo Url::to(['site/login']) ?>">Login</a></li>
                     <li><a  href="register.html"  >Register</a></li>
 
                 </ul>
@@ -197,7 +198,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         </div>
                     </li>
                     <li><a class="color4" href="blog.html">Blog</a></li>
-                    <li><a class="color6" href="contact.html">Conact</a></li>
+                    <li><a class="color6" href="<?php echo Url::to(['site/contact']) ?>">Conact</a></li>
                 </ul>
             </div>
 

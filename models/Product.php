@@ -11,6 +11,7 @@ use yii\db\ActiveRecord;
  * @property int $id
  * @property int $category_id
  * @property string $name
+ * @property string $manufacturer
  * @property string $content
  * @property int $status
  * @property double $price
